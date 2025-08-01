@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# Revolt Motors Voice Assistant - Setup Script
+# This script creates the complete project structure
+
+echo "Setting up Revolt Motors Voice Assistant..."
+
+# Create project directory
+mkdir -p revolt-voice-assistant
+cd revolt-voice-assistant
+
+# Create static directory
+mkdir -p static
+
+# Create main.py
+cat > main.py << 'EOF'
+# Copy the Python backend code from the main.py artifact above
+EOF
+
+# Create static/app.js
+cat > static/app.js << 'EOF'
+# Copy the JavaScript code from the app.js artifact above
+EOF
+
+# Create requirements.txt
+cat > requirements.txt << 'EOF'
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+python-dotenv==1.0.0
+python-multipart==0.0.6
+EOF
+
+# Create .env file
+cat > .env << 'EOF'
+# Get your API key from https://aistudio.google.com
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# Optional: Set development mode
+DEVELOPMENT=true
+EOF
+
+# Create .gitignore
+cat > .gitignore << 'EOF'
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+.DS_Store
+*.egg-info/
+dist/
+build/
+EOF
+
+# Create README.md (copy from artifact above)
+
+echo "Project structure created!"
+echo ""
+echo "Next steps:"
+echo "1. cd revolt-voice-assistant"
+echo "2. Get your Gemini API key from https://aistudio.google.com"
+echo "3. Add your API key to the .env file"
+echo "4. pip install -r requirements.txt"
+echo "5. python main.py"
+echo "6. Open http://localhost:8000 in your browser"
+echo ""
+echo "Project structure:"
+echo "revolt-voice-assistant/"
+echo "├── main.py                 # Backend server"
+echo "├── static/"
+echo "│   └── app.js             # Frontend JavaScript"
+echo "├── requirements.txt        # Python dependencies"
+echo "├── .env                   # Environment variables"
+echo "├── .gitignore            # Git ignore rules"
+echo "└── README.md             # Documentation"
